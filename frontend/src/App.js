@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import {Switch, Route} from 'react-router';
 
-import Home from './home.js'
+import Home from './home.js';
+import CreateIssue from './create_issue.js';
+import Issue from './issue.js';
 
 import './style.css';
 
@@ -41,6 +43,9 @@ class App extends Component{
 			<BrowserRouter>
                 <Switch>
                     <Route exact path="/" render={(props)=><Home onClick={this.attemptLogin} userData={this.state.userData}/>}/>
+					<Route exact path="/Create" component={CreateIssue}/>
+					<Route exact path="/Issue" component={Issue}/>
+
                 </Switch>
             </BrowserRouter>
 
