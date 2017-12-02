@@ -1,6 +1,7 @@
 // var dbconfig = require('../dbConfig.js');
 // var ObjectId = require('mongodb').ObjectId;
 var crypto = require('crypto');
+var constituentsModule = require('./constituents');
 
 function generateTTL() {
     var today = new Date();
@@ -11,7 +12,7 @@ module.exports = {
     insertUser: function (db, userData, CB) {
         //Check for dups here TODO
 
-        var logic = function (db, callback) {
+        var logic = function (db, constituents, callback) {
             var token = Math.random().toString(36).substring(3);
             var salt = crypto.randomBytes(16).toString('hex');
 
@@ -30,7 +31,8 @@ module.exports = {
                     tokens: [{
                         "key": token,
                         "TTL": generateTTL()
-                    }]
+                    }],
+                    constituents: constituents
                 },
                 function (err, result) {
                     callback(err, result)
@@ -38,17 +40,28 @@ module.exports = {
             )
         }
 
-        logic(db, function (err, result) {
+        constituentsModule.getConstituents(userData.zip, function (err, response) {
             if (err) {
-                CB(err, null);
+                CB({
+                    valid:0,
+                    error:"Please make sure your address is correct"
+                })
             } else {
-                var resObject = {
-                    'valid': 1,
-                    '_id': result.ops[0]._id
-                };
-                CB(resObject)
+                logic(db, response, function (err, result) {
+                    if (err) {
+                        CB(err, null);
+                    } else {
+                        var resObject = {
+                            'valid': 1,
+                            '_id': result.ops[0]._id
+                        };
+                        CB(resObject)
+                    }
+                })
             }
         })
+
+
     },
 
     login: function (db, data, CB) {
@@ -72,7 +85,7 @@ module.exports = {
                     }
                 }
             );
-        }
+        };
         var logic = function (db, salt, callback) {
             console.log(salt.salt)
             var generatedToken = Math.random().toString(36).substring(3);
@@ -117,7 +130,7 @@ module.exports = {
                 fields: {
                     salt: 1
                 }
-            },function (err, salt) {
+            }, function (err, salt) {
                 if (err) {
                     CB(err, null);
                 } else {
@@ -131,12 +144,17 @@ module.exports = {
                                 }, null);
                                 return;
                             }
-
+                            console.log("=======================")
+                            console.log(response)
+                            console.log("=======================")
                             // Respond
                             var robj = {
                                 key: response.value.tokens[0].key,
                                 ttl: response.value.tokens[0].ttl,
-                                uid: response.value._id
+                                uid: response.value._id,
+                                username: response.value.username,
+                                email:response.value.email,
+                                constituents:response.value.constituents
                             };
                             CB(null, robj);
                         });
