@@ -39,13 +39,13 @@ body{
 	margin-right:10em;
 }
 
-.Issue{
+.IssuePreview{
 	border-left: 6px solid #44049b;
 	padding: .5em;
 	margin: 1em;
 }
 
-.Issue:hover{
+.IssuePreview:hover{
 	border-left: 9px solid #a50b0b;	
 }
 
@@ -57,6 +57,13 @@ body{
 
 .IssueForm div{
 	margin:.5em;
+}
+
+.Issue .content{
+	margin-left:10em;
+	margin-right:10em;
+	padding-top: 1em;
+	text-align:center;
 }
 
 .Footer{
