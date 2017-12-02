@@ -6,13 +6,18 @@ import Footer from './footer.js';
 import './style.css';
 
 class Home extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            userData: this.props.userData
+        }
+    }
 	render(){
 		return(
 			<div>
-				<Banner title="Issunews" text="Take actions on the issues that matter the most"/>
-				<Login />
+				<Banner title="Issunews" text="Take actions on the issues that matter the most" />
+				<Login onClick = {this.props.onClick} userData={this.state.userData}/>
 				<IssueList />
-
 				<Footer />
 			</div>
 		);

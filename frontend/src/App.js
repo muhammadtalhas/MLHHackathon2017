@@ -7,6 +7,32 @@ import Home from './home.js'
 import './style.css';
 
 class App extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            userData: null
+        }
+        this.attemptLogin = this.attemptLogin.bind(this);
+
+    }
+    attemptLogin(username, password){
+        console.log("usernmae: "+ username)
+        console.dir(username);
+        console.log("password: "+ password)
+        fetch("http://localhost:8080/api/login/ ",{
+            method:"POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        }).then(function (response) {
+            console.log(response)
+        })
+    }
 	render(){
 		return(
 			<div>
@@ -14,7 +40,7 @@ class App extends Component{
 
 			<BrowserRouter>
                 <Switch>
-                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/" render={(props)=><Home onClick={this.attemptLogin} userData={this.state.userData}/>}/>
                 </Switch>
             </BrowserRouter>
 

@@ -2,8 +2,12 @@
 var express = require('express');
 var bodyParser = require('body-parser')
 var app = express();
+var cors = require('cors')
+
+
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
+app.use(cors());
 
 var dbConnector = require('./dbConnector/dbConnector.js');
 var dbConfig = require('./dbConnector/dbConfig.js');
@@ -73,6 +77,6 @@ app.post(BASE_URL + '/login', function (req, res) {
     }
 })
 
-app.listen(3000, function () {
-    console.log('Listening on :3000')
+app.listen(8080, function () {
+    console.log('Listening on :8080')
 })
