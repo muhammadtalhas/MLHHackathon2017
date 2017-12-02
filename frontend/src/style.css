@@ -1,0 +1,21 @@
+.Banner{
+	background-color:#44049b;
+	color:#f7f7f7;
+	font-family: 'Oswald', serif;
+	text-align: center;
+	padding: 1em;
+	margin-top: -1em;
+	margin-left: -1em;
+	margin-right: -1em;
+	top:0px;
+	font-size: 24px;
+}
+
+.Login{
+	background-color:#111111;
+	padding:.35em;
+	margin-left: -.5em;
+	margin-right: -.5em;
+	text-align:right;
+	color:#f7f7f7;
+}
