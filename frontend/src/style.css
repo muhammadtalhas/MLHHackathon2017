@@ -1,12 +1,21 @@
+html{
+	font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	margin:0;
+	padding:0;
+}
+
 .Banner{
 	background-color:#44049b;
 	color:#f7f7f7;
 	font-family: 'Oswald', serif;
 	text-align: center;
 	padding: 1em;
-	margin-top: -1em;
+	/*margin-top: -1em;
 	margin-left: -1em;
-	margin-right: -1em;
+	margin-right: -1em;*/
 	top:0px;
 	font-size: 24px;
 }
@@ -14,8 +23,43 @@
 .Login{
 	background-color:#111111;
 	padding:.35em;
-	margin-left: -.5em;
-	margin-right: -.5em;
+/*	margin-left: -.5em;
+	margin-right: -.5em;*/
 	text-align:right;
 	color:#f7f7f7;
+}
+
+.Login form input{
+	width:8em;
+	margin-right:.5em;
+}
+
+.IssueList{
+	margin-left:10em;
+	margin-right:10em;
+}
+
+.Issue{
+	border-left: 6px solid #44049b;
+	padding: .5em;
+	margin: 1em;
+}
+
+.Issue:hover{
+	border-left: 9px solid #a50b0b;	
+}
+
+.Issue p{
+
+}
+
+.Footer{
+	background-color: #44049b;
+	color: #f7f7f7;
+	border-top: 12px solid #111111;
+	position:fixed;
+	bottom: 0;
+	left:0;
+	padding:.5em;
+	width: 100%;
 }
