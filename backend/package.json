@@ -12,6 +12,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Talha Muhammad & Brandon Wond",
+  "author": "Talha Muhammad & Brandon Wong",
   "license": "ISC"
 }
