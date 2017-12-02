@@ -49,8 +49,14 @@ body{
 	border-left: 9px solid #a50b0b;	
 }
 
-.Issue p{
+.IssueForm{
+	margin:2em;
+	padding:1em;
+	text-align:center;
+}
 
+.IssueForm div{
+	margin:.5em;
 }
 
 .Footer{
