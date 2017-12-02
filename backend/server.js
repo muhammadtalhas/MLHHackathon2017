@@ -36,7 +36,7 @@ app.post(BASE_URL + '/register', function(req, res){
         state:req.body.state,
         zip:req.body.zip
     };
-    console.log(data)
+    console.log(data);
     if(data.username
         && data.email
         && data.password
@@ -54,6 +54,22 @@ app.post(BASE_URL + '/register', function(req, res){
         })
     }else{
         res.send("Some data was missing")
+    }
+})
+
+app.post(BASE_URL + '/login', function (req, res) {
+    var data = {
+        username: String(req.body.username).trim().toLowerCase(),
+        password: req.body.password
+    }
+    if(data.username && data.password){
+        dbConnector.user.login(db, data, function(err, response){
+            if(err){
+                res.send(err);
+            }else{
+                res.send(response)
+            }
+        })
     }
 })
 
