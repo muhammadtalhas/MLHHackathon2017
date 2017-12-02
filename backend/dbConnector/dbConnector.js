@@ -1,7 +1,7 @@
 //PlaceHolder
 
-//var mongoInventory = require('../modules/inventory.js')
+var mongoUser = require('../modules/users.js')
 
 module.exports = {
-    inventory: "test"
+    user: mongoUser
 }
