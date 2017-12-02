@@ -6,6 +6,9 @@ class Banner extends Component{
 			<div className = "Banner">
 				<h1>{this.props.title}</h1>
 				<img src={this.props.image} alt=""></img>
+				<p>
+					{this.props.text}
+				</p>
 			</div>
 		);
 	}

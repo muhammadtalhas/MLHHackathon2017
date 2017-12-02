@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import Banner from './banner.js';
-import Login from './login.js';
-import IssueList from './issue_list.js';
-import Footer from './footer.js';
+import {BrowserRouter} from 'react-router-dom';
+import {Switch, Route} from 'react-router';
+
+import Home from './home.js'
+
 import './style.css';
 
 class App extends Component{
@@ -10,11 +11,13 @@ class App extends Component{
 		return(
 			<div>
 			<link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel="stylesheet"/>
-				<Banner title="Issunews"/>
-				<Login />
-				<IssueList />
 
-				<Footer />
+			<BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                </Switch>
+            </BrowserRouter>
+
 			</div>
 		);
 	}

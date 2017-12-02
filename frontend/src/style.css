@@ -12,7 +12,7 @@ body{
 	color:#f7f7f7;
 	font-family: 'Oswald', serif;
 	text-align: center;
-	padding: 1em;
+	padding: .25em;
 	/*margin-top: -1em;
 	margin-left: -1em;
 	margin-right: -1em;*/
@@ -60,6 +60,7 @@ body{
 	position:fixed;
 	bottom: 0;
 	left:0;
-	padding:.5em;
+	padding:.25em;
+	padding-left:3em;
 	width: 100%;
 }
