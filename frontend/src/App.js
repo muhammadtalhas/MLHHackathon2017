@@ -14,10 +14,10 @@ class App extends Component{
         this.state = {
             userData: null
         }
-        this.attemptLogin = this.attemptLogin.bind(this);
+        //this.attemptLogin = this.attemptLogin.bind(this);
 
     }
-    attemptLogin(username, password){
+    attemptLogin=(username, password)=>{
         console.log("usernmae: "+ username)
         console.dir(username);
         console.log("password: "+ password)
@@ -32,9 +32,14 @@ class App extends Component{
                 password: password
             })
         }).then(function (response) {
-            console.log(response)
+            return response.json()
+        }).then(function (response) {
+            console.log("Setting state")
+            console.dir(response)
+            this.setState({userData: response});
         })
     }
+
 	render(){
 		return(
 			<div>
