@@ -11,7 +11,7 @@ class Issue extends Component{
 				<Banner title="Issunews" text="Net Neutrality" />
 				<Login />
 				<div className="content">
-					<img src={this.props.image} />
+					<img src={this.props.image} alt=""/>
 					<p>
 						{this.props.description}
 						Net neutrality is the principle that Internet service providers must treat all data on the Internet the same, and not discriminate or charge differently by user, content, website, platform, application, type of attached equipment, or method of communication.For instance, under these principles, internet service providers are unable to intentionally block, slow down or charge money for specific websites and online content.
