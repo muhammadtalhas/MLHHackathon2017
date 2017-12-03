@@ -20,6 +20,7 @@ dbConfig.mongoClient.connect(dbConfig.mongoUrl, function (err, database) {
         console.log("Ayo fam mongo not connecting rip\n\n");
     } else {
         db = database;
+        console.log("db is connected")
     }
 });
 
