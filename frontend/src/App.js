@@ -48,9 +48,8 @@ class App extends Component{
 			<BrowserRouter>
                 <Switch>
                     <Route exact path="/" render={(props)=><Home onClick={this.attemptLogin} userData={this.state.userData}/>}/>
-					<Route exact path="/Create" component={CreateIssue}/>
-					<Route exact path="/Issue" component={Issue}/>
-
+					<Route exact path="/Create" render={(props)=><CreateIssue userData={this.state.userData}/>}/>
+					<Route exact path="/Issue" render={(props)=><Issue userData={this.state.userData}/>}/>
                 </Switch>
             </BrowserRouter>
 

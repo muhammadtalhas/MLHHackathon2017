@@ -11,12 +11,27 @@ class Issue extends Component{
 				<Banner title="Issunews" text="Net Neutrality" />
 				<Login />
 				<div className="content">
-					<img src={this.props.image} alt=""/>
-					<p>
-						{this.props.description}
-						Net neutrality is the principle that Internet service providers must treat all data on the Internet the same, and not discriminate or charge differently by user, content, website, platform, application, type of attached equipment, or method of communication.For instance, under these principles, internet service providers are unable to intentionally block, slow down or charge money for specific websites and online content.
-					</p>
 					<form>
+					<img src={this.props.image} alt=""/>
+					<div>
+						<label>Email</label>
+						<br/>
+						<input type="text" name="email" value="Cunt@dick.com"/>
+					</div>
+
+					<div>
+					<label>Message</label>
+					<br/>
+					<textarea name="message" rows="10" cols="100">
+						Net neutrality is the principle that Internet service providers must treat all data on the Internet the same, and not discriminate or charge differently by user, content, website, platform, application, type of attached equipment, or method of communication.For instance, under these principles, internet service providers are unable to intentionally block, slow down or charge money for specific websites and online content.
+					</textarea>
+					</div>
+	
+					<p>
+						By clicking the "I Support" button, you agree to send the above to your constituents.
+					</p>
+						<ConstituentView userData={this.props.userData} />	
+					
 						<button type="submit">I Support</button>
 					</form>	
 				</div>
@@ -25,5 +40,36 @@ class Issue extends Component{
 		);
 	}
 }
+
+class ConstituentView extends Component{
+	render(){
+		let congressman = this.props.userData.constituents.map(function(people, i){
+			return(
+				<div>
+					<Constituent name={people.name} party={people.party} district={people.district}/>
+				</div>
+			);	
+		});
+		return(
+			<div>
+				{congressman}
+			</div>
+		)
+	};
+};
+
+class Constituent extends Component{
+	render(){
+		let name = "Representative: ";
+		if(this.props.district.length < 1)
+			name = "Senator: "
+		name += this.props.name;
+		return(
+			<div className="Consitiuent">
+				<b>{name}</b> - {this.props.party}
+			</div>
+		)
+	};
+};
 
 export default Issue;
