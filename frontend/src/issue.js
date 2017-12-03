@@ -80,7 +80,41 @@ class Issue extends Component{
 					<Footer/>
 				</div>
             );
-        }
+        }else{
+            return (
+				<div className="Issue">
+					<Banner title="Issunews" text="Ocean Acidity"/>
+					<Login onClick={this.props.onClick} userData={this.state.userData}/>
+					<div className="content">
+						<form>
+							<img src={this.props.image} alt=""/>
+							<div>
+								<label>Email</label>
+								<br/>
+								<input type="text" name="email"
+									   value={this.props.userData ? this.props.userData.email : ""}/>
+							</div>
+
+							<div>
+								<label>Message</label>
+								<br/>
+								<textarea name="message" rows="6" cols="100">
+									Pour baking soda in the Oceans
+					</textarea>
+							</div>
+
+							<p>
+								By clicking the "I Support" button, you agree to send the above to your constituents.
+							</p>
+							<ConstituentView userData={this.props.userData}/>
+							<br/>
+							<button type="submit" disabled={!this.props.userData}>I Support</button>
+						</form>
+					</div>
+					<Footer/>
+				</div>
+            );
+		}
 		
 	}
 }
