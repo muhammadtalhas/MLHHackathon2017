@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 
 class IssueList extends Component{
 	render(){
@@ -21,17 +22,17 @@ class IssueList extends Component{
 	}
 }
 
-class Issue extends Component{
-	render(){
-		return(
-			<div className="IssuePreview">
-				<h3>{this.props.title}</h3>
-				<p>
-					{this.props.description}
-				</p>
-			</div>
-		)
-	}
+class Issue extends Component {
+    render() {
+        return (
+            <div className="IssuePreview">
+                <h3>{this.props.title}</h3>
+                <p>
+                    {this.props.description}
+                </p>
+            </div>
+        )
+    }
 }
 
 export default IssueList;

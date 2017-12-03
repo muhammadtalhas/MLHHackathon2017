@@ -39,6 +39,8 @@ class App extends Component{
         })
     }
 
+
+
     componentDidMount(){
         fetch("http://localhost:8080/api/getIssues",{
             method: "GET",
@@ -61,8 +63,9 @@ class App extends Component{
 			<BrowserRouter>
                 <Switch>
                     <Route exact path="/" render={(props)=><Home onClick={this.attemptLogin} issues={this.state.issues} userData={this.state.userData}/>}/>
-					<Route exact path="/Create" render={(props)=><CreateIssue userData={this.state.userData}/>}/>
-					<Route exact path="/Issue:issue_id" render={(props)=><Issue userData={this.state.userData}/>}/>
+					<Route exact path="/Issue/:issue_id" render={(props)=><Issue onClick={this.attemptLogin} userData={this.state.userData}/>}/>
+
+                    <Route exact path="/Create" render={(props)=><CreateIssue userData={this.state.userData}/>}/>
                 </Switch>
             </BrowserRouter>
 
