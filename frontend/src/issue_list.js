@@ -11,7 +11,7 @@ class IssueList extends Component{
 			);
 });
 			return(
-				<div>
+				<div className="IssueList">
 					{issue}
 				</div>
 			);
