@@ -5,11 +5,14 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userData: this.props.userData
+            userData: null
         }
         this.handleChangeUsername = this.handleChangeUsername.bind(this);
         this.handleChangePassword = this.handleChangePassword.bind(this);
         this.onClick = this.onClick.bind(this);
+    }
+    componentWillReceiveProps(nextProps) {
+        this.setState({ userData: nextProps.userData });
     }
 
     handleChangeUsername(e) {
@@ -29,7 +32,7 @@ class Login extends Component {
         if (this.state.userData) {
             return(
                 <div className="Login">
-                    <label>Welcome ${this.state.userData.username}</label>
+                    <label>Welcome {this.state.userData.username}</label>
                 </div>
             )
         } else {
