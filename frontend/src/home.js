@@ -27,7 +27,7 @@ class Home extends Component {
 			<div>
 				<Banner title="Issunews" text="Take action on the issues that matter the most" />
 				<Login onClick = {this.props.onClick} userData={this.state.userData}/>
-				<IssueList />
+				<IssueList issues={this.state.issues}/>
 				<Footer />
 			</div>
 		);
