@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ddf116b-5992-4e10-a023-898bcab8a58b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/issue.js" afterPath="$PROJECT_DIR$/frontend/src/issue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/issue_list.js" afterPath="$PROJECT_DIR$/frontend/src/issue_list.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -76,7 +76,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="issue.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="issue.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/issue.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="849">
@@ -88,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="issue_list.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="issue_list.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/issue_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="450">
+              <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -162,8 +162,8 @@
         <option value="$PROJECT_DIR$/frontend/src/style.css" />
         <option value="$PROJECT_DIR$/frontend/src/home.js" />
         <option value="$PROJECT_DIR$/frontend/src/App.js" />
-        <option value="$PROJECT_DIR$/frontend/src/issue_list.js" />
         <option value="$PROJECT_DIR$/frontend/src/issue.js" />
+        <option value="$PROJECT_DIR$/frontend/src/issue_list.js" />
       </list>
     </option>
   </component>
@@ -294,12 +294,12 @@
       <option name="presentableId" value="Default" />
       <updated>1512233690353</updated>
       <workItem from="1512233691868" duration="21443000" />
-      <workItem from="1512256008574" duration="9033000" />
+      <workItem from="1512256008574" duration="9274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30476000" />
+    <option name="totallyTimeSpent" value="30717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="342" y="24" width="1857" height="1092" extended-state="6" />
@@ -562,22 +562,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/issue_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/issue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="849">
           <caret line="113" column="29" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/issue_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
