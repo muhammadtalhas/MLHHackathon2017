@@ -6,7 +6,7 @@ class IssueList extends Component{
 			let issue = this.props.issues.map(function(item, i){
 			return(
 				<div>	
-					<Issue key{item._id} title={item.title} description={item.description} />
+					<Issue key={item._id} title={item.title} description={item.description} />
 				</div>
 			);
 });
