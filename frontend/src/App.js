@@ -14,7 +14,7 @@ class App extends Component{
         this.state = {
             userData: null
         }
-        //this.attemptLogin = this.attemptLogin.bind(this);
+        this.attemptLogin = this.attemptLogin.bind(this);
 
     }
     attemptLogin=(username, password)=>{
@@ -31,11 +31,10 @@ class App extends Component{
                 username: username,
                 password: password
             })
-        }).then(function (response) {
+        }).then( (response) => {
             return response.json()
-        }).then(function (response) {
+        }).then( (response)=> {
             console.log("Setting state")
-            console.dir(response)
             this.setState({userData: response});
         })
     }

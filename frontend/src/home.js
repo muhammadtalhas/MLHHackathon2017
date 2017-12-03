@@ -9,8 +9,11 @@ class Home extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            userData: this.props.userData
+            userData: null
         }
+    }
+    componentWillReceiveProps(nextProps) {
+        this.setState({ userData: nextProps.userData });
     }
 	render(){
 		return(
