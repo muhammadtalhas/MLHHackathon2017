@@ -78,6 +78,15 @@ app.post(BASE_URL + '/login', function (req, res) {
     }
 })
 
+app.get(BASE_URL+'/getIssues', function (req, res) {
+    dbConnector.issues.getIssues(db,function(err, result){
+        if(err){
+            res.send(err)
+        }else{
+            res.send(result)
+        }
+    })
+});
 app.listen(8080, function () {
     console.log('Listening on :8080')
 })
